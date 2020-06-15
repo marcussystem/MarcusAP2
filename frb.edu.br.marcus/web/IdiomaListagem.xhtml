@@ -1,0 +1,49 @@
+<?xml version='1.0' encoding='UTF-8' ?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml"
+      xmlns:h="http://xmlns.jcp.org/jsf/html"
+      xmlns:f="http://xmlns.jcp.org/jsf/core">
+    <h:head>
+        <title>Lista de Idiomas</title>
+    </h:head>
+    <h:body>
+        <h:form>
+            <h1>LISTA DOS IDIOMAS CADASTRADOS</h1>
+            <h:commandButton value="VOLTAR" style="width: 95%" action="voltaParaIndex"/>
+            <h:commandButton value="Novo Idioma" style="width: 95%" action="#{idiomaController.prepararInclusao()}"/>
+            <br/>
+            
+            <h:dataTable style="width: 95%"
+                         var="umIdioma"
+                         value="#{idiomaController.idiomas}"
+                         border="1">
+                
+                <h:column>
+                    <f:facet name="header">
+                        <h:outputLabel value="Nome"/>
+                    </f:facet>
+                    <h:outputLabel value="#{umIdioma.nome}"/>
+                </h:column>
+                <h:column>
+                    <f:facet name="header">
+                        <h:outputLabel value="Ação"/>
+                    </f:facet>
+                    <h:commandLink value="Detalhe" action="vaiParaDetalhe">
+                        <f:setPropertyActionListener target="#{idiomaController.idioma}" value="#{umIdioma}"/>
+                    </h:commandLink>
+                    <h:outputLabel value="|"/>
+                    <h:commandLink value="Editar" action="vaiParaEditar">
+                        <f:setPropertyActionListener target="#{idiomaController.idioma}" value="#{umIdioma}"/>
+                    </h:commandLink>
+                    <h:outputLabel value="|"/>
+                    <h:commandLink value="Excluir" action="#{idiomaController.finalizaExclusao()}">
+                        <f:setPropertyActionListener target="#{idiomaController.idioma}" value="#{umIdioma}"/>
+                    </h:commandLink>
+                </h:column>
+                
+            </h:dataTable>
+            
+        </h:form>
+    </h:body>
+</html>
+

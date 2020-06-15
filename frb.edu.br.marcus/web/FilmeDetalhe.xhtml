@@ -1,0 +1,78 @@
+<?xml version='1.0' encoding='UTF-8' ?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml"
+      xmlns:h="http://xmlns.jcp.org/jsf/html"
+      xmlns:f="http://xmlns.jcp.org/jsf/core">
+    <h:head>
+        <title>Filme Detalhe</title>
+    </h:head>
+    <h:body>
+        <h:form>
+            <h1>Inclusão de novo filme</h1>
+            <table>
+                <tbody>
+                    <tr>
+                        <td><h:outputLabel value="Filme_id"/></td>
+                        <td><h:outputLabel value="#{filmeController.filme.filme_id}"/></td>
+                    </tr>                    
+                    <tr>
+                        <td><h:outputLabel value="Titulo"/></td>
+                        <td><h:outputLabel value="#{filmeController.filme.titulo}"/></td>
+                    </tr>
+                    <tr>
+                        <td><h:outputLabel value="Descricao"/></td>
+                        <td><h:outputLabel value="#{filmeController.filme.descricao}"/></td>
+                    </tr>
+                    <tr>
+                        <td><h:outputLabel value="Ano de lancamento"/></td>
+                        <td><h:outputLabel value="#{filmeController.filme.ano_de_lancamento}" /></td>
+                    </tr>
+                    <tr>
+                        <td><h:outputLabel value="Idioma"/></td>
+                        <td><h:outputLabel value="#{filmeController.filme.idioma_id.nome}" /></td>
+                    </tr>                    
+                    <tr>
+                        <td><h:outputLabel value="Idioma_original"/></td>
+                        <td><h:outputLabel value="#{filmeController.filme.idioma_original_id.nome}" /></td>
+                    </tr>  
+                    <tr>
+                        <td><h:outputLabel value="Duracao da locacao"/></td>
+                        <td><h:outputLabel value="#{filmeController.filme.duracao_da_locacao}"/></td>
+                    </tr>
+                    <tr>
+                        <td><h:outputLabel value="Preco da locacao"/></td>
+                        <td><h:outputLabel value="#{filmeController.filme.preco_da_locacao}"/></td>
+                    </tr>
+                    <tr>
+                        <td><h:outputLabel value="Duracao do filme"/></td>
+                        <td><h:outputLabel value="#{filmeController.filme.duracao_do_filme}"/></td>
+                    </tr>
+                    <tr>
+                        <td><h:outputLabel value="Custo de substituicao"/></td>
+                        <td><h:outputLabel value="#{filmeController.filme.custo_de_substituicao}"/></td>
+                    </tr>
+                    <tr>
+                        <td><h:outputLabel value="Classificacao"/></td>
+                        <td><h:outputLabel value="#{filmeController.filme.classificacao}"/></td>
+                    </tr>
+                    <tr>
+                        <td><h:outputLabel value="Recursos especiais"/></td>
+                        <td><h:outputLabel value="#{filmeController.filme.recursos_especiais}"/></td>
+                    </tr>
+                    <tr>
+                        <td><h:outputLabel value="Ultima atualização"/></td>
+                        <td><h:outputLabel value="#{filmeController.filme.ultima_atualizacao}">
+                                <f:convertDateTime pattern="dd/MM/yyy"/>
+                            </h:outputLabel>
+                        </td>
+                    </tr>
+                </tbody>
+            </table>
+            <br/>
+            <h:commandButton value="Voltar" style="width: 48%" action="voltaParaListagem"/>
+            <h:commandButton value="Editar" style="width: 48%" action="vaiParaEditar"/>
+
+        </h:form>
+    </h:body>
+</html>
+

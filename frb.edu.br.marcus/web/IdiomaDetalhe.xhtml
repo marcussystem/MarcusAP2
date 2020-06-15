@@ -1,0 +1,37 @@
+<?xml version='1.0' encoding='UTF-8' ?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml"
+      xmlns:h="http://xmlns.jcp.org/jsf/html"
+      xmlns:f="http://xmlns.jcp.org/jsf/core">
+    <h:head>
+        <title>Idioma Detalhe</title>
+    </h:head>
+    <h:body>
+        <h:form>
+            <h1>Detalhe de um idioma</h1>
+            <table>
+                <tbody>
+                    <tr>
+                        <td><h:outputLabel value="Idioma_id"/></td>
+                        <td><h:outputLabel value="#{idiomaController.idioma.idioma_id}"/></td>
+                    </tr>
+                    <tr>
+                        <td><h:outputLabel value="Nome"/></td>
+                        <td><h:outputLabel value="#{idiomaController.idioma.nome}"/></td>
+                    </tr>
+                    <tr>
+                        <td><h:outputLabel value="Ultima atualização"/></td>
+                        <td><h:outputLabel value="#{idiomaController.idioma.ultima_atualizacao}">
+                                <f:convertDateTime pattern="dd/MM/yyy"/>
+                            </h:outputLabel>
+                        </td>
+                    </tr>
+                </tbody>
+            </table>
+            <br/>
+            <h:commandButton value="Voltar" style="width: 48%" action="voltaParaListagem"/>
+            <h:commandButton value="Editar" style="width: 48%" action="vaiParaEditar"/>
+        </h:form>
+    </h:body>
+</html>
+
